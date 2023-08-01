@@ -9,5 +9,10 @@ def index():
     ip = request.remote_addr
     return render_template('index.html', ip=ip)
 
+@app.route('/ip')
+def lite():
+    ip = request.remote_addr
+    return ip
+
 if __name__ == '__main__':
     app.run(debug=True)
