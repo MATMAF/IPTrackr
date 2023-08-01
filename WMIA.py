@@ -1,11 +1,10 @@
-from flask import Flask, render_template
-import requests
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    ip = requests.get("https://api.ipify.org/?format=json").json()['ip']
+    ip = request.remote_addr
     return render_template('index.html', ip=ip)
 
 if __name__ == '__main__':
