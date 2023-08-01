@@ -10,7 +10,7 @@ def index():
     return render_template('index.html', ip=ip)
 
 @app.route('/ip')
-def lite():
+def return_ip():
     ip = request.remote_addr
     return ip
 
