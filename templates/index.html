@@ -65,7 +65,7 @@
 </head>
 <body>
     <h1>What's my IP address ?</h1>
-    <p>{{ ip }}</p>
+    <p id="ip">{{ ip }}</p>
     <div>
         Your internet provider is <p class="location">{{ isp }}</p>
     </div>
@@ -73,5 +73,24 @@
         You come from <p class="location">{{ country }}</p>
     </div>
     <footer>© wmia.mat.run - <a href="https://github.com/MATMAF" target="_blank">@MATMAF</a></footer>
+
+    <script>
+        function copyToClipboard(text) {
+            const textField = document.createElement('textarea');
+            textField.innerText = text;
+            document.body.appendChild(textField);
+            textField.select();
+            document.execCommand('copy');
+            document.body.removeChild(textField);
+        }
+
+        // Add click event listener to the text element
+        const copyTextElement = document.getElementById('ip');
+        copyTextElement.addEventListener('click', function () {
+            const textToCopy = copyTextElement.innerText;
+            copyToClipboard(textToCopy);
+            alert("IP copied to clipboard")
+        });
+    </script>
 </body>
 </html>

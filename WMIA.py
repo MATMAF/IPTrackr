@@ -13,7 +13,7 @@ def get_location(ip):
     headers= {
     "apikey": config.APIKEY
     }
-    
+
     response = requests.request("GET", url, headers=headers, data = payload)
 
     status_code = response.status_code
@@ -32,7 +32,7 @@ def get_location(ip):
 def index():
     ip = request.remote_addr
 
-    location = get_location(ip)
+    location = get_location("178.199.66.35")
 
     return render_template('index.html', ip=ip, isp=location[0], country=location[1])
 
