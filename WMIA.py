@@ -2,28 +2,20 @@ from flask import Flask, render_template, request
 from flask_sslify import SSLify
 import requests
 import json
-import config
 
 app = Flask(__name__)
 sslify = SSLify(app)
 
 def get_location(ip):
-    url = "https://api.apilayer.com/ip_to_location/" + ip
-    payload = {}
-    headers= {
-    "apikey": config.APIKEY
-    }
+    url = "http://ip-api.com/json/" + ip
 
-    response = requests.request("GET", url, headers=headers, data = payload)
+    response = requests.request("GET", url)
 
-    status_code = response.status_code
     result = json.loads(response.text)
 
-    connection = result["connection"]
+    isp = result["isp"]
 
-    isp = connection["isp"]
-
-    country = result["country_name"]
+    country = result["country"]
 
     return isp, country
 
@@ -32,7 +24,7 @@ def get_location(ip):
 def index():
     ip = request.remote_addr
 
-    location = get_location("178.199.66.35")
+    location = get_location(ip)
 
     return render_template('index.html', ip=ip, isp=location[0], country=location[1])
 
