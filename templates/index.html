@@ -33,6 +33,10 @@
             color: #C84B31;
         }
 
+        #ip {
+            cursor: pointer;
+        }
+
         .location {
             display: inline;
             font-size: 20px;
@@ -41,10 +45,6 @@
         div {
             text-align: center;
             font-size: 20px;
-        }
-
-        img {
-            display: inline;
         }
 
         footer {
@@ -73,7 +73,6 @@
         You come from <p class="location">{{ country }}</p>
     </div>
     <footer>© wmia.mat.run - <a href="https://github.com/MATMAF" target="_blank">@MATMAF</a></footer>
-
     <script>
         function copyToClipboard(text) {
             const textField = document.createElement('textarea');
