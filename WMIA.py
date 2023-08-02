@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from flask_sslify import SSLify
 import requests
 import json
+import config
 
 app = Flask(__name__)
 sslify = SSLify(app)
@@ -10,7 +11,7 @@ def get_location(ip):
     url = "https://api.apilayer.com/ip_to_location/" + ip
     payload = {}
     headers= {
-    "apikey": "bidiugJMpp0jTIwCZU45Ll2g10jlCevB"
+    "apikey": config.APIKEY
     }
 
     response = requests.request("GET", url, headers=headers, data = payload)
