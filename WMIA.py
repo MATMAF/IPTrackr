@@ -10,7 +10,7 @@ def get_location(ip):
     url = "https://api.apilayer.com/ip_to_location/" + ip
     payload = {}
     headers= {
-    "apikey": "bidiugJMpp0jTIwCZU45Ll2g10jlCevB"
+    "apikey": ""
     }
 
     response = requests.request("GET", url, headers=headers, data = payload)
