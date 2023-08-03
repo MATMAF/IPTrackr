@@ -1,4 +1,4 @@
-# WMIA
+# IPTrackr
 What's my IP address in python and html
 
 I use Flask as backend to get the IP address and the others informations
