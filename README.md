@@ -3,11 +3,7 @@ What's my IP address in python and html
 
 I use Flask as backend to get the IP address and the others informations
 
-https://wmia.mat.run
-
-Version with only the IP address
-
-https://wmia.mat.run/ip
+Version with only the IP address : URL/ip
 ## Features
 * IP address
 * Internet provider
