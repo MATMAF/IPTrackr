@@ -3,7 +3,7 @@ What's my IP address in python and html
 
 I use Flask as backend to get the IP address and the others informations
 
-Version with only the IP address : URL/ip
+Version with only the IP address : [whatsmyipaddress.dev/ip](https://whatsmyipaddress.dev/ip)
 ## Features
 * IP address
 * Internet provider
