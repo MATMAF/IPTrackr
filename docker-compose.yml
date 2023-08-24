@@ -1,0 +1,6 @@
+services:
+  whatsmyipaddress:
+    image: mathieumafille/whatsmyipaddress:latest
+    ports:
+      - 5000:5000
+    restart: always

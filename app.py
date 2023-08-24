@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request
-from flask_sslify import SSLify
 import requests
 import json
 
 app = Flask(__name__)
-sslify = SSLify(app)
 
 def get_ip():
-    return request.remote_addr
+    # Caddy Server: header_up X-Forwarded-For {remote_host}
+    forwarded_for = request.headers.get('X-Forwarded-For')
+    client_ip = forwarded_for.split(',')[0].strip()
+    return client_ip
 
 def get_location(ip):
     url = "http://ip-api.com/json/" + ip
@@ -30,4 +31,4 @@ def return_ip():
     return ip
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")
