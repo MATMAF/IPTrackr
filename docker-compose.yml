@@ -1,6 +1,7 @@
 services:
   whatsmyipaddress:
-    image: mathieumafille/whatsmyipaddress:latest
+    container_name: whatsmyipaddress
+    image: ghcr.io/matmaf/whatsmyipaddress:main
     ports:
       - 5000:5000
     restart: always
