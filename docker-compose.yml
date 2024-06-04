@@ -1,7 +1,0 @@
-services:
-  whatsmyipaddress:
-    container_name: whatsmyipaddress
-    image: ghcr.io/matmaf/whatsmyipaddress:main
-    ports:
-      - 5000:5000
-    restart: always

@@ -1,12 +1,23 @@
 # What's my IP address ?
 What's my IP address in python and html.
 
-[whatsmyipaddress.dev](https://whatsmyipaddress.dev)
-
 I use Flask as backend to get the IP address and the others informations.
 
-Version with only the IP address : [whatsmyipaddress.dev/ip](https://whatsmyipaddress.dev/ip)
+Version with only the IP address : https://example.com/ip
 ## Features
 * IP address
 * Internet provider
 * Country
+
+## Build the docker image
+`docker build -t whatsmyipaddress .`
+
+## Docker compose
+```
+services:
+  whatsmyipaddress:
+    image: whatsmyipaddress
+    container_name: whatsmyipaddress
+    ports:
+      - 8000:8000
+```
