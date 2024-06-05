@@ -6,6 +6,7 @@ I use Flask as backend to get the IP address and the others informations.
 Url of the latest version hosted: https://ip.matmaf.xyz
 
 You can retrieve only the IP address: https://ip.matmaf.xyz/ip
+
 ## Features
 * IP address
 * Internet provider
